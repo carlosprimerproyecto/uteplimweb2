@@ -1,0 +1,63 @@
+
+
+<div class="container_principal">
+    <div class="container1">
+      <img src="https://firebasestorage.googleapis.com/v0/b/utesocial-4228352-2.appspot.com/o/img_afiliados_app%2Fafiliado.png?alt=media&token=2bff93d9-e22f-46d2-b6ed-8853d45f9a5c" alt="">
+    
+      
+      <h4>RECUERDE REVISAR <br> LOS DATOS INGRESADOS</h4>
+      <hr>
+      <img src="https://firebasestorage.googleapis.com/v0/b/utesocial-4228352-2.appspot.com/o/img_afiliados_app%2FLOGOUTEPLIM.png?alt=media&token=f3602f0d-ebea-49f9-98d6-bba06d6bbfa9" alt="" width="60%">
+    <br> <hr><br>
+      <a routerLink="/bandeja" style="background-color: rgba(3, 120, 3, 0.758); text-decoration: none; display: block; color: white;padding:10px 2px ;margin-top: 20px;max-width: 1300px; border-radius: 5px; ">VOLVER A BANDEJA PRINCIPAL</a>
+    
+    </div>
+        
+    <div class="container">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" formControlName="nombre" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Apellido:</label>
+            <input type="text" formControlName="apellido" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>DNI/CUIL:</label>
+            <input type="text" formControlName="dni_cuil" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Teléfono:</label>
+            <input type="text" formControlName="telefono" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Domicilio:</label>
+            <input type="text" formControlName="domicilio" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Localidad:</label>
+            <input type="text" formControlName="localidad" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Número de Afiliado:</label>
+            <input type="text" formControlName="numero_afiliado" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label>Razón Social:</label>
+            <input type="text" formControlName="razon_Social" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Grupo Familiar:</label>
+            <input type="text" formControlName="grupo_familiar" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Imagen de Salud:</label>
+            <input type="file" formControlName="img_salud" class="form-control-file">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Registrar Afiliado</button>
+        </form>
+      </div>
+    </div>

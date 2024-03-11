@@ -1,0 +1,54 @@
+<div class="contenedor">
+
+  <h1>Afiliados Registrados</h1>
+  <hr />
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI/CUIL</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="afiliados.length > 0">
+      <tr *ngFor="let afiliado of afiliados">
+        <td>{{ afiliado.nombre }}</td>
+        <td>{{ afiliado.apellido }}</td>
+        <td>{{ afiliado.dni_cuil }}</td>
+        <td>{{ afiliado.telefono }}</td>
+        <td><button class="btnVer" >Ver</button></td>
+
+        <td><button class="btnEditar">Editar</button></td>
+        <td>
+          <button class="btnEliminar" (click)="deleteAfiliado(afiliado.id)">
+            Eliminar Afiliado
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a
+    routerLink="/bandeja"
+    style="
+      background-color: rgba(3, 120, 3, 0.758);
+      text-decoration: none;
+      display: block;
+      color: white;
+      padding: 10px 2px;
+      margin-top: 20px;
+      max-width: 300px;
+      border-radius: 5px;
+    "
+    >VOLVER A BANDEJA PRINCIPAL</a
+  >
+  <h3>NUESTROS AFILIADOS</h3>
+  <hr />
+  <img
+    src="https://firebasestorage.googleapis.com/v0/b/utesocial-4228352-2.appspot.com/o/img_afiliados_app%2Fafiliadosapp.png?alt=media&token=4d9cbe48-9938-4174-9e98-93ea40806be3"
+    alt=""
+    height="100px"
+  />
+</div>
+<br />

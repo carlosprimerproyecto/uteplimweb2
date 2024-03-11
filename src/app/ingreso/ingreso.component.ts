@@ -31,7 +31,7 @@ export class IngresoComponent   {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log("Usuario registrado correctamente");
-        //this.router.navigate(['/bandeja'])
+        this.router.navigate(['/bandeja'])
       })
       .catch(error => {
         this.errorMessage = "NO TIENE PERMISOS VERIFIQUE SUS CREDENCIALES pongase en contacto con su proovedor";

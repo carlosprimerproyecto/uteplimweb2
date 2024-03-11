@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AfiliadoService } from '../services/afiliado.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-afiliado',
@@ -8,6 +9,7 @@ import { AfiliadoService } from '../services/afiliado.service';
   imports: [
     ReactiveFormsModule,
     FormsModule,  
+    RouterModule
   ],
   templateUrl: './nuevo-afiliado.component.html',
   styleUrl: './nuevo-afiliado.component.css'

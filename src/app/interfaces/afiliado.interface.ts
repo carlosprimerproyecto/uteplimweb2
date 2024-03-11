@@ -1,6 +1,6 @@
 export default interface Afiliado {
 
-id?: string;
+id: string;
 nombre: string;
 apellido: string;
 dni_cuil: string;

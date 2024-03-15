@@ -1,37 +1,40 @@
 <app-navegador></app-navegador>
 <div class="contenedor">
 
-  <h1>Afiliados Registrados</h1>
+  <h1 style="color:rgb(0, 0, 0)">BAJA DE AFILIADO</h1> <hr>
+  <p>DEBE ESTAR SEGURO/A ANTES DE DAR DE BAJA A UN AFILIADO/A</p>
+  <h3  style="color:rgb(255, 255, 255); background-color: red;">esta opción no se puede deshacer</h3>
   <hr />
+  
   <table>
     <thead>
       <tr>
-        <th>Apellido</th>
         <th>Nombre</th>
-       
-        <th>Número Afiliado</th>
+        <th>Apellido</th>
         <th>DNI/CUIL</th>
         <th>Teléfono</th>
+        <th>Número de Afiliado</th>
       </tr>
     </thead>
     <tbody *ngIf="afiliados.length > 0">
       <tr *ngFor="let afiliado of afiliados">
-        <td>{{ afiliado.apellido }}</td>
         <td>{{ afiliado.nombre }}</td>
-       
-        <td>{{ afiliado.numero_afiliado }}</td>
+        <td>{{ afiliado.apellido }}</td>
         <td>{{ afiliado.dni_cuil }}</td>
         <td>{{ afiliado.telefono }}</td>
-        <td><button class="btnVer" (click)="onVerClick(afiliado.id)" >Ver</button></td>
+        <td>{{ afiliado.numero_afiliado }}</td>
+       
 
        
-       
+        <td>
+          <button class="btnEliminar" (click)="deleteAfiliado(afiliado.id)">
+            Eliminar Afiliado
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
 
-  
-  
   <h3>NUESTROS AFILIADOS</h3>
   <hr />
   <img

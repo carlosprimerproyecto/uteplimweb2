@@ -1,7 +1,7 @@
 /* bandeja-principal.component.css */
 .contenedor{
     max-width: 900px;
-    margin:30px auto;
+    margin:5px auto;
     border-radius: 10px;
     color:rgb(255, 255, 255);
     padding:40px;
@@ -20,7 +20,7 @@
     
     .card {
       width: 200px;
-      height: 80px;
+      height:60px;
       background-color: #036e0570;
       border-radius: 10px;
       padding: 10px;
@@ -45,3 +45,9 @@
       margin-bottom: 0;
     }
     
+
+    .imgSalud {
+      max-width: 400px;
+      max-height: 600px;
+     
+    }

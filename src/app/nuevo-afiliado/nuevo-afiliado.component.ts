@@ -2,22 +2,24 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AfiliadoService } from '../services/afiliado.service';
 import { RouterModule } from '@angular/router';
+import { NavegadorComponent } from "../navegador/navegador.component";
 
 @Component({
-  selector: 'app-nuevo-afiliado',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    FormsModule,  
-    RouterModule
-  ],
-  templateUrl: './nuevo-afiliado.component.html',
-  styleUrl: './nuevo-afiliado.component.css'
+    selector: 'app-nuevo-afiliado',
+    standalone: true,
+    templateUrl: './nuevo-afiliado.component.html',
+    styleUrl: './nuevo-afiliado.component.css',
+    imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        RouterModule,
+        NavegadorComponent
+    ]
 })
 export class NuevoAfiliadoComponent {
 
 formulario: FormGroup;
-afiliados: any;
+
 
 constructor(private afiliadoService: AfiliadoService) {
   this.formulario = new FormGroup({
@@ -40,9 +42,9 @@ ngOnInit(): void {}
 async onSubmit(){
 console.log(this.formulario.value); //ya tiene los valores es un objeto
 const respuesta = await this.afiliadoService.addAfiliado(this.formulario.value); //guardamos la respuesta
-console.log(respuesta);
-alert("se ha guardado correctamente")
-this.formulario.reset();
+console.log(respuesta); 
+alert("se ha guardado correctamente") //alerta
+this.formulario.reset(); // pone en blanco el formilario
 
 }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData } from '@angular/fire/firestore';
 import Afiliado from '../interfaces/afiliado.interface';
 import { Observable } from 'rxjs';
 
@@ -12,8 +12,8 @@ export class AfiliadoService {
 
 //metodo agregar
 addAfiliado(afiliado: Afiliado){
-  const afiliadoRef = collection(this.firestore, 'afiliado'); //acceder a las colecciones
-  return addDoc(afiliadoRef, afiliado) //guarda el afiliado
+  const referenciaAfiliado = collection(this.firestore, 'afiliado'); //acceder a las colecciones
+  return addDoc(referenciaAfiliado, afiliado) //guarda el afiliado
   }
   
   //metodo traertodos
@@ -22,11 +22,14 @@ addAfiliado(afiliado: Afiliado){
     return collectionData(afiliadoRef, { idField:'id' }) as Observable<Afiliado[]>;//traer
   }
 
-   //metodo eliminar
-   deleteAfiliado(id: string) {
-    const afiliadoRef = doc(this.firestore, 'afiliado', id);
-    return deleteDoc(afiliadoRef);
+  //traer por id 
+  getAfiliadoPorId(id: string): Observable<Afiliado> {
+    const afiliadoRef = doc(this.firestore, 'afiliado', id); // referencia al documento
+    return docData(afiliadoRef, { idField: 'id' }) as Observable<Afiliado>; // traer solo el documento
   }
+  
+
+ 
 
 
 

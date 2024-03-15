@@ -4,6 +4,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 
+
 interface Item {
   name:String,
 };
@@ -14,7 +15,8 @@ interface Item {
   standalone: true,
   imports: [
     RouterOutlet,
-  CommonModule
+  CommonModule,
+  
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
